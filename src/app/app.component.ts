@@ -1,62 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FirstComponent } from './components/first-component/first-component.component';
-import { SecondComponent } from './components/second-component/second-component.component';
+import { OpenaiService } from './service/openai.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FirstComponent, SecondComponent],
+  imports: [CommonModule, RouterOutlet, HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [OpenaiService]
 })
-export class AppComponent implements OnInit { 
-  readonly Teams = Teams;
+export class AppComponent {
   title = 'angular-17-project';
-  showDashboard: boolean = false;
-  preferredTeam: Teams = Teams.REAL;
-  features: string[] = [
-    'New control flow syntax: @if, @else, @for, @switch, etc',
-    'SSR as option on new poject and development ready',
-    'Standalone components as default',
-    'Deferred loading',
-    'Custom @Input transforms',
-    'esbuild and Vite are enabled by default'
-  ];
-
-  // New control flow syntax conclusion
-  // kinda weird at first, but a good option when we work with standalone, since is build in and we don't import anything
-  // for the new for syntax, track is now required => loops faster and more efficient
-  // we also have a fallback if there's no items in the list -> @empty
-  // ng generate @angular/core:control-flow
-
-  // new deferred loading functionality
-  // @defer works in your template and allows you to separate out chunks of that u'd like to be deferred loaded
-
-  // input transform -> some default options for transform the types + we can create our own transforms
-
-  // the component styles are accepted without to be an array
-
-  // material.angular.io is 2.5x faster because of esbuild and vite
-
-
-  ngOnInit(): void {
-      // setTimeout(() => {
-      //   // this will actually increse the loading of the page -> because of SSR?
-      //   this.showDashboard = true;
-      // }, 5_000);
+  constructor(private readonly _openAIService: OpenaiService) {
+    const prompt = 'Genereaza-mi un program alimentar pentru inaltimea 176cm si greutate 63kg. Vreau sa cresc in masa musculara. Te rog sa imi dai direct raspunsul sub format JSON.';
+    this._openAIService.getOpenaiResponse(prompt).subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
-
-  chooseRandomTeam(): void {
-    const randomIndex = Math.floor(Math.random() * Object.keys(Teams).length / 2);
-    this.preferredTeam = randomIndex;
-  }
-
-}
-export enum Teams {
-  REAL,
-  BARCA,
-  BAYERN,
-  JUVENTUS
 }
