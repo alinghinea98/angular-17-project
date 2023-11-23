@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class OpenaiService {
 
-  private readonly _OPEN_AI_KEY = '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';
+  private readonly _OPEN_AI_KEY = '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';
   constructor(private readonly _httpClient: HttpClient){
 
   }
@@ -24,8 +24,7 @@ export class OpenaiService {
     ];
     const data = {
       messages,
-      max_tokens: 100,
-      model: 'gpt-3.5-turbo'
+      model: 'gpt-4'
     };
 
     return this._httpClient.post(apiUrl, data, { headers: headers });

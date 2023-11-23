@@ -1,1 +1,8 @@
 <h1>AI Trainer</h1>
+<button (click)="getProgram()">Get personal program</button>
+@if (loading) {
+    <h1>Your personal program is loading. This might take up to 5 minutes. Thank you for your patience.😄</h1>
+}
+@if (!loading) {
+    <h1>{{program | json}}</h1>
+}
