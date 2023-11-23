@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body { height: 100%; }
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(to top, #4CAF50, #7fe383, #FFFFFF);
+    transition: background 0.5s ease-in-out;
+    padding: 1rem;
+  }
+  

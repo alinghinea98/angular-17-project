@@ -1,0 +1,81 @@
+<form [formGroup]="programForm">
+  <mat-form-field>
+    <mat-label>First name</mat-label>
+    <input
+      matInput
+      [formControl]="$any(programForm).controls['firstName']"
+      [errorStateMatcher]="matcher"
+      placeholder="Insert first name here"
+    />
+    @if ($any(programForm).controls['firstName'].hasError('required')) {
+    <mat-error>First name is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last name</mat-label>
+    <input
+      matInput
+      [formControl]="$any(programForm).controls['lastName']"
+      [errorStateMatcher]="matcher"
+      placeholder="Insert last name here"
+    />
+    @if ($any(programForm).controls['lastName'].hasError('required')) {
+    <mat-error>Last name is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Age</mat-label>
+    <input
+      matInput
+      type="number"
+      [formControl]="$any(programForm).controls['age']"
+      [errorStateMatcher]="matcher"
+      placeholder="Insert age here"
+    />
+    @if ($any(programForm).controls['age'].hasError('required')) {
+    <mat-error>Age is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Height</mat-label>
+    <input
+      matInput
+      type="number"
+      [formControl]="$any(programForm).controls['height']"
+      [errorStateMatcher]="matcher"
+      placeholder="Insert height here"
+    />
+    @if ($any(programForm).controls['height'].hasError('required')) {
+    <mat-error>Height is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Weight</mat-label>
+    <input
+      matInput
+      type="number"
+      [formControl]="$any(programForm).controls['weight']"
+      [errorStateMatcher]="matcher"
+      placeholder="Insert weight here"
+    />
+    @if ($any(programForm).controls['weight'].hasError('required')) {
+    <mat-error>Weight is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Choose an option</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let goal of Goals | keyvalue" [value]="goal.value">
+        {{ goal.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    (click)="getProgram()"
+  >
+    Generate
+  </button>
+</form>
