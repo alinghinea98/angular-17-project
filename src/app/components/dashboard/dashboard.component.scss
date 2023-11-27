@@ -1,0 +1,46 @@
+main {
+    background-color: #dff3f4;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    place-items: center;
+
+    img {
+        height: 40rem;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.5;
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto;
+            min-height: 100px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .primary {
+            color: #007bff;
+        }
+
+        .second {
+            color: #555;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}

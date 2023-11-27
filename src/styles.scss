@@ -7,8 +7,26 @@
 html, body { height: 100%; }
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: linear-gradient(to top, #4CAF50, #7fe383, #FFFFFF);
     transition: background 0.5s ease-in-out;
-    padding: 1rem;
   }
-  
+.component-container {
+    display: block;
+    height: calc(100% - 3rem);
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Colțuri rotunjite */
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.button-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.button-secondary {
+    background-color: #f8f9fa;
+    color: #555;
+}
