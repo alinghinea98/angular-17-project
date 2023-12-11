@@ -12,8 +12,16 @@
       of fitness and well-being with <span class="primary">FitMe!</span>
     </p>
     <div class="actions">
-      <button class="button-primary">Get Started</button>
-      <button class="button-secondary">Learn More</button>
+      <button class="button-primary" type="submit" (click)="goTo('generate')">
+        Get Started
+      </button>
+      <button
+        class="button-secondary"
+        type="button"
+        (click)="goTo('learn-more')"
+      >
+        Learn More
+      </button>
     </div>
   </section>
 </main>

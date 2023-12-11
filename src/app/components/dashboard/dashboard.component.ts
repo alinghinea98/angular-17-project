@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,4 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dashboard.component.scss',
   host: { class: 'component-container' },
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  private readonly _router = inject(Router);
+  goTo(path: string): void {
+    this._router.navigate([path]);
+  }
+}
