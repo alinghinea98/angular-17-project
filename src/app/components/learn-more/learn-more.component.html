@@ -2,30 +2,71 @@
   <section class="overview">
     <h2>Overview</h2>
     <p>
-      Welcome to FitMe Trainer Dashboard! As a fitness trainer, you have the
-      power to create personalized nutrition and workout programs for your
-      clients. Utilize our advanced features to streamline your coaching process
-      and help your clients achieve their fitness goals.
+      Welcome to FitMe Trainer! As a fitness trainer, you have the power to
+      create personalized nutrition and workout programs for your clients.
+      Utilize our advanced features to streamline your coaching process and help
+      your clients achieve their fitness goals.
     </p>
+    <div class="numbers">
+      <div>
+        <h2>322</h2>
+        <p>Current clients</p>
+      </div>
+      <div>
+        <h2>1023</h2>
+        <p>Generated programs</p>
+      </div>
+      <div>
+        <h2>256</h2>
+        <p>Positive reviews</p>
+      </div>
+    </div>
   </section>
-
-  <section class="features">
-    <h2>Key Features</h2>
-    <ul>
-      <li>Generate customized nutrition plans</li>
-      <li>Create tailored workout routines</li>
-      <li>Access client profiles and progress tracking</li>
-      <li>Efficiently manage multiple clients</li>
-    </ul>
-  </section>
-
-  <section class="get-started">
-    <h2>Get Started Today</h2>
-    <p>
-      Ready to revolutionize your coaching experience? Join FitMe Trainer
-      Dashboard and elevate your ability to guide clients towards a healthier
-      lifestyle.
-    </p>
-    <a href="#" class="button-primary">Sign Up Now</a>
+  <section
+    class="features"
+    scrollbar="true"
+    pager="true"
+    style="max-width: 500px"
+  >
+    <swiper-container
+      class="slider-wrapper"
+      effect="cards"
+      slideShadows="true"
+      [loop]="true"
+    >
+      <swiper-slide>
+        <img
+          src="../../../assets/images/nutrition-plan.jpg"
+          alt="nutrition-plan"
+        />
+        <h2>Generate customized nutrition plans</h2>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="../../../assets/images/workout.jpg" alt="nutrition-plan" />
+        <h2>Create tailored workout routines</h2>
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          src="../../../assets/images/user-tracking.jpg"
+          alt="nutrition-plan"
+        />
+        <h2>Access client profiles and progress tracking</h2>
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          src="../../../assets/images/manage-multiple.jpg"
+          alt="nutrition-plan"
+        />
+        <h2>Efficiently manage multiple clients</h2>
+      </swiper-slide>
+    </swiper-container>
+    <div>
+      <h2>Get Started Today</h2>
+      <p>
+        Ready to revolutionize your coaching experience? Join FitMe Trainer and
+        elevate your ability to guide clients towards a healthier lifestyle.
+      </p>
+      <a href="#" class="button-primary">Sign Up Now</a>
+    </div>
   </section>
 </main>

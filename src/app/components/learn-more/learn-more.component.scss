@@ -1,7 +1,29 @@
 main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    place-items: center;
+
+    .overview {
+        padding: 4rem;
+        h2 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .numbers {
+            display: flex;
+            margin-top: 3rem;
+            gap: 1rem;
+            text-align: start;
+            font-weight: bold;
+        }
+    }
 
     section {
         margin-bottom: 2rem;
@@ -23,6 +45,38 @@ main {
             li {
                 font-size: 1.2em;
                 color: #333;
+            }
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 32rem;
+            aspect-ratio: 1/1;
+            height: 35rem;
+
+            img {
+                max-width: 32rem;
+                border-radius: 10px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .swiper {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            swiper-slide {
+                position: relative;
+
+                h2 {
+                    position: absolute;
+                    bottom: 60px;
+                    left: 10px;
+                    color: white;
+                }
             }
         }
 
