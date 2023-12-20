@@ -1,3 +1,9 @@
 .mat-mdc-form-field, .mat-mdc-raised-button {
     width: 100%;
 }
+form {
+    display: grid;
+    place-items: center;
+    max-width: 50%;
+    margin: auto;
+}

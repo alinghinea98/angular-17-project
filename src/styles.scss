@@ -8,11 +8,11 @@ html, body { height: 100%; }
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     transition: background 0.5s ease-in-out;
+    background-color: #dff3f4;
   }
 .component-container {
     display: block;
     height: calc(100% - 3rem);
-    background-color: #dff3f4;
 }
 button {
     padding: 10px 20px;

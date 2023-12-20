@@ -1,0 +1,105 @@
+<main>
+  <img src="../../../assets/images/signup2.jpeg" alt="sign-up-image" />
+  <form>
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="$any(signUpForm.controls['firstName'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if ($any(signUpForm.controls['firstName']).hasError('required')) {
+      <mat-error>First name is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="$any(signUpForm.controls['lastName'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if ($any(signUpForm.controls['lastName']).hasError('required')) {
+      <mat-error>Last name is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="$any(signUpForm.controls['age'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if ($any(signUpForm.controls['age']).hasError('required')) {
+      <mat-error>Age is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone number</mat-label>
+      <input
+        matInput
+        required
+        [formControl]="$any(signUpForm.controls['phone'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if ($any(signUpForm.controls['phone']).hasError('required')) {
+      <mat-error>Phone number is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        required
+        [formControl]="$any(signUpForm.controls['email'])"
+        [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com"
+      />
+      @if ($any(signUpForm.controls['email']).hasError('email') &&
+      !$any(signUpForm.controls['email']).hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+      } @if ($any(signUpForm.controls['email']).hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose a password</mat-label>
+      <input
+        matInput
+        required
+        type="password"
+        [formControl]="$any(signUpForm.controls['password'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if ($any(signUpForm.controls['password']).hasError('required')) {
+      <mat-error>Password is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Repeat password</mat-label>
+      <input
+        matInput
+        required
+        type="password"
+        [formControl]="$any(signUpForm.controls['passwordConfirmation'])"
+        [errorStateMatcher]="matcher"
+      />
+      @if (signUpForm.hasError('passwordsNotMatch')) {
+      <mat-error>Passwords does not match</mat-error>
+      }
+    </mat-form-field>
+    <section class="buttons">
+      <button class="button-primary">Sign Up</button>
+      <mat-slide-toggle
+        [formControl]="$any(signUpForm).controls['trainer']"
+        [color]="'#007bff'"
+        class="custom-slide-toggle"
+        ><h2>I am a trainer</h2></mat-slide-toggle
+      >
+    </section>
+  </form>
+</main>
